@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 Classwork</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <!-- SCRIPT TAG STARTED -->
+    <script>
+            // CREATE ALL PARENT TAG INDIDE THE BODY
+            const rootbody = React.createElement("div", { id: "root" }, [
+              React.createElement("h1", null, "Learn web development"),
+              React.createElement("div", { id: "div1" }, null),
+              React.createElement("div", { id: "div2" }, null),
+              React.createElement("div", { id: "div3" }, null),
+            ]);
+            ReactDOM.render(rootbody, document.getElementById("body"));
+
+            // CREATE A NEW P TAG AND RENDER IN INSIDE THE DIV1 TAG BY ID SELECTOR
+            const para1 = React.createElement(
+              "p",
+              null,
+              "I am p tag inside Heading 1"
+            );
+            ReactDOM.render(para1, document.getElementById("div1"));
+
+            // CREATE A NEW P TAG AND A TAG AND RENDER IN INSIDE THE DIV2 TAG BY ID SELECTOR   AND USE REACT.FRAGMENT TO DIRECT INSET OF TAG
+            const div2 = () => {
+              return React.createElement(
+                React.Fragment,
+                null,
+                React.createElement(
+                  "p",
+                  null,
+                  'The aim of this area of MDN is not to take you from "beginner" to "expert" but to take you from "beginner" to "comfortable." From there, you should be able to start making your way, learning from the ',
+                  React.createElement(
+                    "a",
+                    { href: "https://developer.mozilla.org/", target: "_blank" },
+                    "rest of MDN"
+                  ),
+                  ", and other intermediate to advanced resources that assume a lot of previous knowledge."
+                )
+              );
+            };
+            ReactDOM.render(
+              React.createElement(div2),
+              document.getElementById("div2")
+            );
+
+            // CREATE A NEW P TAG AND RENDER IN INSIDE THE DIV3 TAG BY ID SELECTOR
+            const para3 = React.createElement("p", null, "If you are a complete beginner, web development can be challenging — we will hold your hand and provide enough detail for you to feel comfortable and learn the topics properly. You should feel at home whether you are a student learning web development (on your own or as part of a class), a teacher looking for class materials, a hobbyist, or someone who just wants to understand more about howweb technologies work.");
+            ReactDOM.render(para3, document.getElementById("div3"));
+    </script>
+  </body>
+</html>
